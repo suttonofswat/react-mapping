@@ -3,6 +3,12 @@ var QuarterbackComponent = require('./QuarterbackComponent');
 
 module.exports = React.createClass({
 	render: function() {
+		var qb = this.props.quarterbacks.map(function(qb){
+			return(
+				<QuarterbackComponent quarterback={qb} />
+
+				);
+		});
 		return (
 			<div className="row">
 				<h1>Quarterbacks</h1>
@@ -20,6 +26,7 @@ module.exports = React.createClass({
 						</tr>
 					</thead>
 					<tbody>
+						{qb}
 					</tbody>
 				</table>
 			</div>
